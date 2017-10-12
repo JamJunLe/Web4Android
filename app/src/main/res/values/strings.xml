@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">泡在网上的日子</string>
+    <string name="memu_main_action_about">关于</string>
+    <string name="memu_main_about">本APP所有数据均来源于"泡在网上的日子"</string>
+</resources>

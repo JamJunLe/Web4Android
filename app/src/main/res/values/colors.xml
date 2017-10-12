@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d22222</color>
+    <color name="colorPrimaryDark">#d22222</color>
+    <color name="colorAccent">#d22222</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+
+    <!-- app主色调 -->
+    <color name="app_main_color">#96b97d</color>
+
+    <!-- app普通默认字体颜色 浅灰 -->
+    <color name="app_text_default_color">#999999</color>
+
+    <!-- 文章标题颜色 -->
+    <color name="text_color_article_title">#333333</color>
+
+    <!-- 文章内容颜色 -->
+    <color name="text_color_article_simple">#333333</color>
+
+    <!-- app普通默认字体颜色 浅灰 -->
+    <color name="drablw_palce_holder">#d9d7d7</color>
+</resources>
