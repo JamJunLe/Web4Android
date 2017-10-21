@@ -24,18 +24,17 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
     </style>
 
-
+    <!--把该属性改为false即可使menu位置位于toolbar之下-->
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+    </style>
     <!-- toolbar弹出菜单样式 -->
-    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat.Light">
+    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat.Dark">
         <item name="android:colorBackground">#ffffff</item>
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle
         </item> <!--新增一个item，用于控制menu-->
     </style>
 
-    <!--把该属性改为false即可使menu位置位于toolbar之下-->
-    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
-        <item name="overlapAnchor">false</item>
-    </style>
 
     <!-- 自定义进度条-->
     <style name="InverseProgressBarStyle" parent="Widget.AppCompat.ProgressBar">
