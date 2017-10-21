@@ -1,5 +1,24 @@
 <resources>
     <string name="app_name">泡在网上的日子</string>
-    <string name="memu_main_action_about">关于</string>
+    <string name="action_about">关于</string>
+    <string name="action_about_close">关闭</string>
     <string name="memu_main_about">本APP所有数据均来源于"泡在网上的日子"</string>
+    <!-- 使用的三方框架-->
+    <string name="text_about_data_from">所有数据均来自于</string>
+    <string name="text_about_data_framework">第三方框架</string>
+    <string name="text_about_data_from_github">GitHub项目地址</string>
+    <string-array name="open_source_framework_title">
+        <item>Jsoup</item>
+        <item>Volley</item>
+        <item>Glide</item>
+        <item>MaterialDialogs</item>
+        <item>StatusBarUtil</item>
+    </string-array>
+    <string-array name="open_source_framework_url">
+        <item>https://jsoup.org/</item>
+        <item>https://github.com/google/volley</item>
+        <item>https://github.com/bumptech/glide</item>
+        <item>https://github.com/afollestad/material-dialogs</item>
+        <item>https://github.com/laobie/StatusBarUtil</item>
+    </string-array>
 </resources>
