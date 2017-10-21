@@ -7,15 +7,20 @@
     <dimen name="text_margin_common">4dp</dimen>
 
     <!-- 文章标题-->
-    <dimen name="text_size_article_title">16sp</dimen>
+    <dimen name="text_size_article_title">15sp</dimen>
     <!-- 文章内容-->
-    <dimen name="text_size_article_simple">16sp</dimen>
+    <dimen name="text_size_article_simple">14sp</dimen>
 
     <!-- 普通内容-->
     <dimen name="text_size_common">14sp</dimen>
 
-    <!-- 普通内容-->
-    <dimen name="text_size_small">14sp</dimen>
+    <!-- 小字体-->
+    <dimen name="text_size_small">12sp</dimen>
+
+
+    <!-- 文本间字体间距-->
+    <dimen name="text_line_spacing_extra">3dp</dimen>
+
 
 
 </resources>
