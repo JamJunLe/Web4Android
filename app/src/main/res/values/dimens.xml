@@ -5,6 +5,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="text_margin_common">4dp</dimen>
+    <dimen name="pic_text_margin">4dp</dimen>
 
     <!-- 文章标题-->
     <dimen name="text_size_article_title">15sp</dimen>

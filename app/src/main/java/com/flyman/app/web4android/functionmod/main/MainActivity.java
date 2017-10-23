@@ -129,6 +129,7 @@ public class MainActivity extends BaseActivity implements MainContract.View, Fra
         int id = item.getItemId();
         switch (id) {
             case menu_main_about: {
+                //显示关于信息
                 showAboutInfo();
                 break;
             }

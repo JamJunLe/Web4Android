@@ -164,6 +164,7 @@ public class HomePageChildModle extends BaseModule {
                             String bookmark = articles.get(i).select(".archive-detail").select(".list-msg").select(".glyphicon-class").get(2).text();
                             String time = articles.get(i).select(".archive-detail").select(".archive-data").select(".glyphicon-class").text();
                             Article mArticle = new Article(articleId, title, img, listUser, eyeOpen, comment, bookmark, time, href, simpleIntro, listUserImg, totalPage, totalArticles);
+                            LogUtils.e("",""+mArticle.getImg());
                             mList.add(mArticle);
                         }
                         Message mMessage = new Message();
