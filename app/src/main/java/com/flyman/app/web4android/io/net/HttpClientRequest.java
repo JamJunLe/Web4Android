@@ -21,7 +21,7 @@ public class HttpClientRequest {
         this.mContext = mContext;
     }
     /**
-     *活得请求队列
+     *获得请求队列
      *
      *  @return HttpClientRequest
      *
