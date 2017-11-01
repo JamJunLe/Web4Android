@@ -24,12 +24,12 @@ import com.flyman.app.web4android.functionmod.homepage.presenter.ArticleDetailsP
 import com.flyman.app.web4android.io.net.IWebClientListener;
 import com.flyman.app.web4android.io.net.MyWebChromeClient;
 import com.flyman.app.web4android.io.net.MyWebViewClient;
-import com.flyman.app.web4android.moudle.Constant;
-import com.flyman.app.web4android.moudle.bean.ArticleDetailsTask;
-import com.flyman.app.web4android.moudle.bean.Msg;
+import com.flyman.app.web4android.modle.Constant;
+import com.flyman.app.web4android.modle.bean.ArticleDetailsTask;
+import com.flyman.app.web4android.modle.bean.Msg;
 import com.flyman.app.web4android.widget.SuperSwipeRefreshLayout;
 
-import static com.flyman.app.web4android.moudle.Constant.IntentExtraKeyConstant.KEY_LIST_2_DETAILS;
+import static com.flyman.app.web4android.modle.Constant.IntentExtraKeyConstant.KEY_LIST_2_DETAILS;
 
 public class ArticleDetails extends BaseActivity implements IWebClientListener, SuperSwipeRefreshLayout.OnPullRefreshListener, ArticleDetailsContract.View {
 

@@ -2,7 +2,7 @@ package com.flyman.app.web4android.functionmod.main;
 
 import com.flyman.app.web4android.base.BaseModule;
 import com.flyman.app.web4android.base.IModuleCallback;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 public class MainModule extends BaseModule {
     private IModuleCallback moduleClallback;

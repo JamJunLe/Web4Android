@@ -1,6 +1,6 @@
 package com.flyman.app.web4android.functionmod.topic.modle;
 
-import com.flyman.app.web4android.moudle.bean.Task;
+import com.flyman.app.web4android.modle.bean.Task;
 
 
 public class TopicTask extends Task {

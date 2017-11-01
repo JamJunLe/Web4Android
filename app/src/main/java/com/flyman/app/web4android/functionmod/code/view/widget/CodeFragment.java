@@ -20,7 +20,7 @@ import com.flyman.app.web4android.functionmod.code.presenter.CodeAdapter;
 import com.flyman.app.web4android.functionmod.code.presenter.CodePresenter;
 import com.flyman.app.web4android.functionmod.homepage.view.ArticleDetails;
 import com.flyman.app.web4android.io.api.NetUrl;
-import com.flyman.app.web4android.moudle.Constant;
+import com.flyman.app.web4android.modle.Constant;
 import com.flyman.app.web4android.widget.LazyFragment;
 import com.flyman.app.web4android.widget.LineItemDecortion;
 import com.flyman.app.web4android.widget.SuperSwipeRefreshLayout;

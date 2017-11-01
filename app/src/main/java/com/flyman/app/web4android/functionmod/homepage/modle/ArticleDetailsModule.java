@@ -2,8 +2,8 @@ package com.flyman.app.web4android.functionmod.homepage.modle;
 
 import com.flyman.app.web4android.base.BaseModule;
 import com.flyman.app.web4android.functionmod.homepage.presenter.ArticleDetailsPresenter;
-import com.flyman.app.web4android.moudle.bean.ArticleDetailsTask;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.bean.ArticleDetailsTask;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 
 public class ArticleDetailsModule extends BaseModule {

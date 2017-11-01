@@ -1,4 +1,4 @@
-package com.flyman.app.web4android.moudle;
+package com.flyman.app.web4android.modle;
 
 public interface Constant {
     interface MsgConstant {

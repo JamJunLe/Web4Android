@@ -19,7 +19,7 @@ import com.flyman.app.web4android.functionmod.homepage.modle.bean.Article;
 import com.flyman.app.web4android.functionmod.homepage.presenter.HomePageItemPresenter;
 import com.flyman.app.web4android.functionmod.homepage.presenter.adapter.HomePageItemAdapter;
 import com.flyman.app.web4android.io.api.NetUrl;
-import com.flyman.app.web4android.moudle.Constant;
+import com.flyman.app.web4android.modle.Constant;
 import com.flyman.app.web4android.widget.LazyFragment;
 import com.flyman.app.web4android.widget.LineItemDecortion;
 import com.flyman.app.web4android.widget.SuperSwipeRefreshLayout;
@@ -27,7 +27,7 @@ import com.flyman.app.web4android.widget.SuperSwipeRefreshLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.flyman.app.web4android.moudle.Constant.HomePageChildConstant.ARGS_HOMEPAGE_CHILD_FRAGMENT;
+import static com.flyman.app.web4android.modle.Constant.HomePageChildConstant.ARGS_HOMEPAGE_CHILD_FRAGMENT;
 
 /**
  * @author Flyman

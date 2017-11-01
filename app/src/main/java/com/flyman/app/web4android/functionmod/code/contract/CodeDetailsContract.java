@@ -2,7 +2,7 @@ package com.flyman.app.web4android.functionmod.code.contract;
 
 import com.flyman.app.web4android.base.IBasePresenter;
 import com.flyman.app.web4android.base.IBaseView;
-import com.flyman.app.web4android.moudle.bean.Msg;
+import com.flyman.app.web4android.modle.bean.Msg;
 
 public interface CodeDetailsContract {
 

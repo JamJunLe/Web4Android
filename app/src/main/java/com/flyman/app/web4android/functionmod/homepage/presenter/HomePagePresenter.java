@@ -3,7 +3,7 @@ package com.flyman.app.web4android.functionmod.homepage.presenter;
 import com.flyman.app.web4android.base.IModuleCallback;
 import com.flyman.app.web4android.functionmod.homepage.contract.HomePageContract;
 import com.flyman.app.web4android.functionmod.homepage.view.HomePageFragment;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 public class HomePagePresenter implements HomePageContract.Presenter, IModuleCallback {
     private HomePageFragment view;

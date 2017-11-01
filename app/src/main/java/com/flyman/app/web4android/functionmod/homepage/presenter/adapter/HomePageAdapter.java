@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.flyman.app.web4android.functionmod.homepage.view.HomePageItemFragment;
-import com.flyman.app.web4android.moudle.Constant;
+import com.flyman.app.web4android.modle.Constant;
 
 import java.util.ArrayList;
 import java.util.List;

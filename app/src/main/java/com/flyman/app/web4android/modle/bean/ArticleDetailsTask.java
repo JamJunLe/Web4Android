@@ -1,4 +1,4 @@
-package com.flyman.app.web4android.moudle.bean;
+package com.flyman.app.web4android.modle.bean;
 
 public class ArticleDetailsTask extends Task {
     private String url;

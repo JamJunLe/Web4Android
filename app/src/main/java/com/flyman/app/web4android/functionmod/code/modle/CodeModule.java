@@ -13,7 +13,7 @@ import com.flyman.app.web4android.functionmod.code.modle.api.CodeModuleUrl;
 import com.flyman.app.web4android.functionmod.code.modle.bean.CodeArticle;
 import com.flyman.app.web4android.io.net.CustomRequest;
 import com.flyman.app.web4android.io.net.HttpHelper;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

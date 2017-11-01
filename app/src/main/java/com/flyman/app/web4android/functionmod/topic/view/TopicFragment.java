@@ -19,7 +19,7 @@ import com.flyman.app.web4android.functionmod.topic.modle.TopicTask;
 import com.flyman.app.web4android.functionmod.topic.modle.bean.Topic;
 import com.flyman.app.web4android.functionmod.topic.presenter.TopicAdapter;
 import com.flyman.app.web4android.functionmod.topic.presenter.TopicPresenter;
-import com.flyman.app.web4android.moudle.Constant;
+import com.flyman.app.web4android.modle.Constant;
 import com.flyman.app.web4android.widget.LazyFragment;
 import com.flyman.app.web4android.widget.LineItemDecortion;
 import com.flyman.app.web4android.widget.SuperSwipeRefreshLayout;

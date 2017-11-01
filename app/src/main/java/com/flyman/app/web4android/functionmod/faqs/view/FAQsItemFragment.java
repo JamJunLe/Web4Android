@@ -20,7 +20,7 @@ import com.flyman.app.web4android.functionmod.faqs.modle.FAQsItemTask;
 import com.flyman.app.web4android.functionmod.faqs.modle.api.FAQsConstant;
 import com.flyman.app.web4android.functionmod.faqs.modle.bean.FAQs;
 import com.flyman.app.web4android.functionmod.homepage.view.ArticleDetails;
-import com.flyman.app.web4android.moudle.Constant;
+import com.flyman.app.web4android.modle.Constant;
 import com.flyman.app.web4android.widget.LazyFragment;
 import com.flyman.app.web4android.widget.LineItemDecortion;
 import com.flyman.app.web4android.widget.SuperSwipeRefreshLayout;

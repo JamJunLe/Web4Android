@@ -2,7 +2,7 @@ package com.flyman.app.web4android.functionmod.main;
 
 import com.flyman.app.web4android.base.IModuleCallback;
 import com.flyman.app.web4android.functionmod.main.contract.MainContract;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 public class MainPresenter implements MainContract.Presenter, IModuleCallback {
     private MainContract.View view;

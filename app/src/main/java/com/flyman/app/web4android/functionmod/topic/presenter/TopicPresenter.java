@@ -10,7 +10,7 @@ import com.flyman.app.web4android.functionmod.topic.contract.TopicContract;
 import com.flyman.app.web4android.functionmod.topic.modle.TopicModule;
 import com.flyman.app.web4android.functionmod.topic.modle.TopicTask;
 import com.flyman.app.web4android.functionmod.topic.modle.bean.Topic;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 import java.util.ArrayList;
 

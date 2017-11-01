@@ -1,4 +1,4 @@
-package com.flyman.app.web4android.moudle.bean;
+package com.flyman.app.web4android.modle.bean;
 
 public class ArticleTask extends Task {
     protected int currentPage;

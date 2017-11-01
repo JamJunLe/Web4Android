@@ -3,9 +3,7 @@ package com.flyman.app.web4android.functionmod.homepage.presenter;
 import com.flyman.app.web4android.functionmod.homepage.contract.ArticleDetailsContract;
 import com.flyman.app.web4android.functionmod.homepage.modle.ArticleDetailsModule;
 import com.flyman.app.web4android.functionmod.homepage.view.ArticleDetails;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
-
-import java.util.List;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 public class ArticleDetailsPresenter implements ArticleDetailsContract.Presenter, ArticleDetailsContract.Moudle {
     private ArticleDetails mView;

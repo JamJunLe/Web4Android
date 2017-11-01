@@ -25,8 +25,8 @@ import com.flyman.app.web4android.functionmod.main.contract.MainContract;
 import com.flyman.app.web4android.functionmod.main.entity.About;
 import com.flyman.app.web4android.functionmod.topic.view.TopicFragment;
 import com.flyman.app.web4android.io.api.NetUrl;
-import com.flyman.app.web4android.moudle.Constant;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.Constant;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 import com.flyman.app.web4android.widget.FragmentRadioGroupAdapter;
 
 import java.util.ArrayList;

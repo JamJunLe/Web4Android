@@ -8,7 +8,7 @@ import com.flyman.app.web4android.functionmod.code.contract.CodeContract;
 import com.flyman.app.web4android.functionmod.code.modle.CodeModule;
 import com.flyman.app.web4android.functionmod.code.modle.CodeTask;
 import com.flyman.app.web4android.functionmod.code.modle.bean.CodeArticle;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 import java.util.ArrayList;
 

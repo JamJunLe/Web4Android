@@ -13,8 +13,8 @@ import com.flyman.app.web4android.base.BaseFragment;
 import com.flyman.app.web4android.functionmod.homepage.contract.HomePageContract;
 import com.flyman.app.web4android.functionmod.homepage.presenter.HomePagePresenter;
 import com.flyman.app.web4android.functionmod.homepage.presenter.adapter.HomePageAdapter;
-import com.flyman.app.web4android.moudle.Constant;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.Constant;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 
 public class HomePageFragment extends BaseFragment implements HomePageContract.View, ViewPager.OnPageChangeListener {

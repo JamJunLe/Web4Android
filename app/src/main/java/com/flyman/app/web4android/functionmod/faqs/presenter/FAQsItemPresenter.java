@@ -7,7 +7,7 @@ import com.flyman.app.web4android.functionmod.faqs.contract.FAQsItemContract;
 import com.flyman.app.web4android.functionmod.faqs.modle.FAQsItemModle;
 import com.flyman.app.web4android.functionmod.faqs.modle.FAQsItemTask;
 import com.flyman.app.web4android.functionmod.faqs.modle.bean.FAQs;
-import com.flyman.app.web4android.moudle.bean.BaseTask;
+import com.flyman.app.web4android.modle.bean.BaseTask;
 
 import java.util.ArrayList;
 

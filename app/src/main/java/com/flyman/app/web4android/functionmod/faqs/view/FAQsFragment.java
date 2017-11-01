@@ -14,7 +14,7 @@ import com.flyman.app.web4android.functionmod.faqs.presenter.FAQPresenter;
 import com.flyman.app.web4android.functionmod.faqs.presenter.FAQsAdapter;
 import com.flyman.app.web4android.functionmod.faqs.contract.FAQsContract;
 import com.flyman.app.web4android.functionmod.faqs.modle.api.FAQsConstant;
-import com.flyman.app.web4android.moudle.Constant;
+import com.flyman.app.web4android.modle.Constant;
 
 
 public class FAQsFragment extends BaseFragment implements FAQsContract.View, ViewPager.OnPageChangeListener {
