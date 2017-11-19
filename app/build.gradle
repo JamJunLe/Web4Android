@@ -35,4 +35,6 @@ dependencies {
     compile files('libs/glide-3.7.0.jar')
     compile project(':status-bar-util')
     compile project(':util-lib')
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
 }

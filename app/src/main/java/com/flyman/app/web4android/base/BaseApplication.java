@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.flyman.app.util.log.LogUtils;
+import com.squareup.leakcanary.LeakCanary;
 
 
 /**
@@ -33,6 +34,9 @@ public class BaseApplication extends Application {
          */
         LogUtils.Builder builder = new LogUtils.Builder(this);
         mContext = getApplicationContext();
+
+        //使用leakcanary检测内存泄漏
+        LeakCanary.install(this);
     }
 
     /**
