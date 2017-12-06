@@ -1,7 +1,9 @@
 package com.flyman.app.web4android.functionmod.main;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -14,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.flyman.app.util.common.InputMethodManagerLeakHelper;
 import com.flyman.app.util.log.LogUtils;
 import com.flyman.app.web4android.R;
 import com.flyman.app.web4android.base.BaseActivity;
@@ -204,5 +207,12 @@ public class MainActivity extends BaseActivity implements MainContract.View, Fra
         mIntent.putExtra(Constant.IntentExtraKeyConstant.KEY_LIST_2_DETAILS, url);
         startActivity(mIntent);
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        InputMethodManagerLeakHelper.fixFocusedViewLeak(getApplication());
     }
 }
