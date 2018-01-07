@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <stroke android:color="@color/drablw_palce_holder"></stroke>
-    <solid android:color="@color/drablw_palce_holder"></solid>
-
-
-</shape>

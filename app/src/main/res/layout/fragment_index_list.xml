@@ -9,5 +9,5 @@
                                         android:layout_marginLeft="16dp"
                                         android:layout_marginRight="16dp"
                                         app:layoutManager="LinearLayoutManager"
-                                        tools:context=".functionmod.homepage.view.HomePageFragment"
+                                        tools:context=".ui.fragment.HomePageFragment"
                                         tools:listitem="@layout/fragment_home_page" />

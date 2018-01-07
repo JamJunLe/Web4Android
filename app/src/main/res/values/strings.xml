@@ -21,4 +21,8 @@
         <item>https://github.com/afollestad/material-dialogs</item>
         <item>https://github.com/laobie/StatusBarUtil</item>
     </string-array>
+    <string name="main_tab_1">主页</string>
+    <string name="main_tab_2">代码</string>
+    <string name="main_tab_3">话题</string>
+    <string name="main_tab_4">问答</string>
 </resources>

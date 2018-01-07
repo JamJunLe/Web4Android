@@ -9,13 +9,13 @@ import com.flyman.app.web4android.R;
 import com.jaeger.library.StatusBarUtil;
 
 /**
- * BaseActivity 本程序所有Activity的基类,便于统一管理
+ * BaseActivity 本程序所有Activity的基类
  *
  * @author Flyman
- *         created at 2017/4/1 5:05
+ * created at 2017/4/1 5:05
  */
 public abstract class BaseActivity extends AppCompatActivity {
-
+    protected final String TAG = this.getClass().getName();
     protected Toast mShortToast;
     /**
      * 初始化控件
@@ -27,7 +27,19 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     protected abstract void initVariable();
 
+
     protected void getIntentFormActivity() {
+    }
+
+    @Override
+    public void setContentView(@LayoutRes int layoutResID) {
+        super.setContentView(layoutResID);
+        setStatusBar();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     /**
@@ -65,11 +77,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mShortToast.show();
     }
 
-    @Override
-    public void setContentView(@LayoutRes int layoutResID) {
-        super.setContentView(layoutResID);
-        setStatusBar();
-    }
+
 
     protected void setStatusBar() {
         StatusBarUtil.setColor(this, getResources().getColor(R.color.colorPrimary));

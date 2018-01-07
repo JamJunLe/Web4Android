@@ -3,6 +3,7 @@
           package="com.flyman.app.web4android">
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".base.BaseApplication"
@@ -12,14 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppBaseTheme">
         <activity
-            android:name=".functionmod.main.MainActivity">
+            android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".functionmod.homepage.view.ArticleDetails"></activity>
+        <activity android:name=".ui.activity.ArticleDetails"></activity>
     </application>
 
 </manifest>

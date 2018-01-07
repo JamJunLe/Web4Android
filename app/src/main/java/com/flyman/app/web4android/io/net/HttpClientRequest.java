@@ -6,6 +6,8 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.flyman.app.web4android.base.BaseApplication;
+import com.flyman.app.web4android.modle.task.BaseTask;
+
 /**
  *  @ClassName HttpClientRequest
  *  @description 以volley为基础的网络访问入口
@@ -59,6 +61,18 @@ public class HttpClientRequest {
     }
 
     /**
+     *添加访问请求到队列
+     *
+     *  @return nothing
+     *  @param request Request<T>
+     *  @param task BaseTask
+     */
+    public <T> void addRequest(Request<T> request,BaseTask task) {
+        request.setTag(task);
+        getRequestQueue().add(request);
+    }
+
+    /**
      * 添加访问请求到队列
      *
      * @param request Request<T>
@@ -79,6 +93,18 @@ public class HttpClientRequest {
     public void cancelRequest(String tag) {
         if (mRequestQueue != null) {
             mRequestQueue.cancelAll(tag);
+        }
+    }
+
+    /**
+     *取消请求
+     *
+     *  @return nothing
+     *  @param task BaseTask
+     */
+    public void cancelRequest(BaseTask task) {
+        if (mRequestQueue != null) {
+            mRequestQueue.cancelAll(task);
         }
     }
 

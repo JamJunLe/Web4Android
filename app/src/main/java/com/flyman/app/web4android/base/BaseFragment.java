@@ -9,6 +9,7 @@ import android.widget.Toast;
 public abstract class BaseFragment extends Fragment {
 
     protected Toast mShortToast;
+    protected final String TAG = this.getClass().getName();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

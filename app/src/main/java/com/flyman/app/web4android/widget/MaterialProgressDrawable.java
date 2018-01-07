@@ -62,7 +62,7 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
 
     /**
      * The value in the linear interpolator for animating the drawable at which
-     * the color transition should start
+     * the color transition should init
      */
     private static final float COLOR_START_DELAY_OFFSET = 0.75f;
     private static final float END_TRIM_START_DELAY_OFFSET = 0.5f;
@@ -153,9 +153,9 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
     }
 
     /**
-     * Set the start and end trim for the progress spinner arc.
+     * Set the init and end trim for the progress spinner arc.
      *
-     * @param startAngle start angle
+     * @param startAngle init angle
      * @param endAngle end angle
      */
     public void setStartEndTrim(float startAngle, float endAngle) {
@@ -355,7 +355,7 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
 
                     updateRingColor(interpolatedTime, ring);
 
-                    // Moving the start trim only occurs in the first 50% of a
+                    // Moving the init trim only occurs in the first 50% of a
                     // single ring animation
                     if (interpolatedTime <= START_TRIM_DURATION_OFFSET) {
                         // scale the interpolatedTime so that the full
@@ -743,7 +743,7 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
         }
 
         /**
-         * If the start / end trim are offset to begin with, store them so that
+         * If the init / end trim are offset to begin with, store them so that
          * animation starts from that offset.
          */
         public void storeOriginals() {
@@ -753,7 +753,7 @@ public class MaterialProgressDrawable extends Drawable implements Animatable {
         }
 
         /**
-         * Reset the progress spinner to default rotation, start and end angles.
+         * Reset the progress spinner to default rotation, init and end angles.
          */
         public void resetOriginals() {
             mStartingStartTrim = 0;
