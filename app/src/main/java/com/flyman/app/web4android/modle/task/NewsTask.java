@@ -6,37 +6,53 @@ package com.flyman.app.web4android.modle.task;
  * @description 任务
  * @date 2017-4-14 19:52
  */
-public class NewsTask extends BaseTask{
-    private int totalCodes;//文章总数
-    private int pageNum;//请求的分页
+public class NewsTask extends BaseTask {
+    private int newsAmount;//文章总数
+    private int pageIndex;//请求的分页
+    private String url;
 
     public NewsTask(int taskId) {
         super(taskId);
     }
 
-    public NewsTask(int taskId, int pageNum, int totalCodes) {
+    public NewsTask(int taskId, int pageIndex, int newsAmount) {
         super(taskId);
-        this.pageNum = pageNum;
-        this.totalCodes = totalCodes;
+        this.pageIndex = pageIndex;
+        this.newsAmount = newsAmount;
     }
 
-    public int getTotalCodes() {
-        return totalCodes;
+    public NewsTask(int taskId, int newsAmount, int pageIndex, String url) {
+        super(taskId);
+        this.newsAmount = newsAmount;
+        this.pageIndex = pageIndex;
+        this.url = url;
     }
 
-    public void setTotalCodes(int totalCodes) {
-        this.totalCodes = totalCodes;
+    public int getNewsAmount() {
+        return newsAmount;
     }
 
-    public int getPageNum() {
-        return pageNum;
+    public void setNewsAmount(int newsAmount) {
+        this.newsAmount = newsAmount;
     }
 
-    public void setPageNum(int pageNum) {
-        this.pageNum = pageNum;
+    public int getPageIndex() {
+        return pageIndex;
     }
 
-    public interface Id {
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setPageIndex(int pageIndex) {
+        this.pageIndex = pageIndex;
+    }
+
+    public interface Type {
         int PULL_REFRESH = 1;
         int PULL_REFRESH_SUCESS = 2;
         int PULL_REFRESH_FAIL = 3;

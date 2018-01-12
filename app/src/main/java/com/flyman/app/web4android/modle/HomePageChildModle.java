@@ -7,7 +7,7 @@ import com.flyman.app.web4android.base.IModelCallback;
 import com.flyman.app.web4android.io.net.CustomRequest;
 import com.flyman.app.web4android.modle.bean.Article;
 import com.flyman.app.web4android.modle.task.BaseTask;
-import com.flyman.app.web4android.modle.task.HomePageChildNewsTask;
+import com.flyman.app.web4android.modle.task.NewsTask;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -20,7 +20,7 @@ import java.util.List;
 public class HomePageChildModle extends ProviderModel {
     private IModelCallback callBack;
     private CustomRequest qequest;
-    private HomePageChildNewsTask mTask;
+    private NewsTask mTask;
     private String url = "";
     private int taskId;
     private int args;
@@ -35,7 +35,7 @@ public class HomePageChildModle extends ProviderModel {
 
 //    @Override
 //    public <T extends BaseTask> void start(T t) {
-//        mTask = (HomePageChildNewsTask) t;
+//        mTask = (NewsTask) t;
 //        taskId = mTask.getTaskId();
 //        //判断是来自于那个fragment发出的请求
 //        switch (args) {
@@ -75,12 +75,12 @@ public class HomePageChildModle extends ProviderModel {
 //
 //        //判断任务id,构建分页数据
 //        switch (taskId) {
-//            case CodeNewsTask.Id.PULL_REFRESH: {
+//            case CodeNewsTask.Type.PULL_REFRESH: {
 //                break;
 //            }
-//            case CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
-//                int pageNum = mTask.getPageNum();
-//                int totalCodes = mTask.getTotalCodes();
+//            case CodeNewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
+//                int pageNum = mTask.getPageIndex();
+//                int totalCodes = mTask.getNewsAmount();
 //                url = url + MessageFormat.format(CodeConstant.CODE_PAGE, new Object[]{totalCodes, pageNum});
 //                break;
 //            }
@@ -100,7 +100,7 @@ public class HomePageChildModle extends ProviderModel {
 //            @Override
 //            public void onErrorResponse(VolleyError volleyError) {
 //                //网页加载错误
-//                callBack.onTaskFail(HomePageChildNewsTask.Message.MSG_NET_ERROR);
+//                callBack.onTaskFail(NewsTask.Message.MSG_NET_ERROR);
 //            }
 //        }).listener(new Response.Listener() {
 //            @Override
@@ -176,7 +176,7 @@ public class HomePageChildModle extends ProviderModel {
 //            {
 //                callBack.onTaskSuccess(mList);
 //            } else {
-//                callBack.onTaskFail(HomePageChildNewsTask.Message.MSG_HTMML_PARSE_ERROR);
+//                callBack.onTaskFail(NewsTask.Message.MSG_HTMML_PARSE_ERROR);
 //            }
 //            callBack.onTaskFinish();
 //            return false;

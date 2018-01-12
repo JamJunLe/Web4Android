@@ -14,7 +14,7 @@ import com.flyman.app.web4android.base.IListView;
 import com.flyman.app.web4android.io.api.FAQsConstant;
 import com.flyman.app.web4android.modle.bean.FAQs;
 import com.flyman.app.web4android.modle.constant.GlobalConstant;
-import com.flyman.app.web4android.modle.task.FAQsItemNewsTask;
+import com.flyman.app.web4android.modle.task.NewsTask;
 import com.flyman.app.web4android.presenter.FAQPresenter;
 import com.flyman.app.web4android.presenter.FAQsItemPresenter;
 import com.flyman.app.web4android.ui.activity.ArticleDetails;
@@ -117,14 +117,14 @@ public class FAQsItemListFragment extends LazyListFragment<IListView, FAQPresent
 
     @Override
     public void onRefresh() {
-        mPresenter.doTask(new FAQsItemNewsTask(FAQsItemNewsTask.Id.PULL_REFRESH));
+        mPresenter.doTask(new NewsTask(NewsTask.Type.PULL_REFRESH));
     }
 
 
     //下拉加载更多
     @Override
     public void onLoadMore() {
-        mPresenter.doTask(new FAQsItemNewsTask(FAQsItemNewsTask.Id.PUSH_LOAD_MORE_REFRESH));
+        mPresenter.doTask(new NewsTask(NewsTask.Type.PUSH_LOAD_MORE_REFRESH));
     }
 
 

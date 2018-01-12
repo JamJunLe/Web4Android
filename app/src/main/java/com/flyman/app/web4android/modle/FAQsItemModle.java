@@ -8,7 +8,7 @@ import com.flyman.app.web4android.io.api.NetUrl;
 import com.flyman.app.web4android.io.net.CustomRequest;
 import com.flyman.app.web4android.modle.bean.FAQs;
 import com.flyman.app.web4android.modle.task.BaseTask;
-import com.flyman.app.web4android.modle.task.FAQsItemNewsTask;
+import com.flyman.app.web4android.modle.task.NewsTask;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -23,7 +23,7 @@ import static com.flyman.app.web4android.io.api.FAQsConstant.FAQS_ITEM;
 public class FAQsItemModle extends ProviderModel {
     private IModelCallback callBack;
     private CustomRequest qequest;
-    private FAQsItemNewsTask mTask;
+    private NewsTask mTask;
     private String url = "";
     private int taskId;
     private int args;
@@ -60,12 +60,12 @@ public class FAQsItemModle extends ProviderModel {
 //
 //    //判断任务id,构建分页数据
 //    switch (taskId) {
-//        case CodeNewsTask.Id.PULL_REFRESH: {
+//        case CodeNewsTask.Type.PULL_REFRESH: {
 //            break;
 //        }
-//        case CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
-//            int pageNum = mTask.getPageNum();
-//            int totalCodes = mTask.getTotalCodes();
+//        case CodeNewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
+//            int pageNum = mTask.getPageIndex();
+//            int totalCodes = mTask.getNewsAmount();
 //            url = url + MessageFormat.format(FAQsConstant.FAQs_PAGE, new Object[]{totalCodes, pageNum});
 //            break;
 //        }

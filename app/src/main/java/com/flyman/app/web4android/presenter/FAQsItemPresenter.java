@@ -7,15 +7,14 @@ import com.flyman.app.web4android.base.IModelCallback;
 import com.flyman.app.web4android.modle.FAQsItemModle;
 import com.flyman.app.web4android.modle.bean.FAQs;
 import com.flyman.app.web4android.modle.task.BaseTask;
-import com.flyman.app.web4android.modle.task.CodeNewsTask;
-import com.flyman.app.web4android.modle.task.FAQsItemNewsTask;
+import com.flyman.app.web4android.modle.task.NewsTask;
 
 import java.util.ArrayList;
 
 public class FAQsItemPresenter extends BasePresenter<IListView> implements IListPresenter, IModelCallback {
     private IListView mView;
     private FAQsItemModle mModle;
-    private FAQsItemNewsTask mTask;
+    private NewsTask mTask;
     private int mTaskId;
     private int currentPage = 1;
     private int totalPage = 0;
@@ -38,14 +37,14 @@ public class FAQsItemPresenter extends BasePresenter<IListView> implements IList
     public void getLoadMoreData() {
         //已经加载完全
         if (totalPage > 0 && currentPage >= totalPage) {
-            mView.showErrorMsg(CodeNewsTask.Message.MSG_PUSH_LOAD_MORE_REFRESH_FINISH);//已经加载了所有的数据
+            mView.showErrorMsg(NewsTask.Message.MSG_PUSH_LOAD_MORE_REFRESH_FINISH);//已经加载了所有的数据
             mView.setRefreshEnable(true);
             mView.setLoadMOreRefreshing(false);
             return;
         }
         currentPage = currentPage + 1;
-        mTask.setPageNum(currentPage);
-        mTask.setTotalCodes(totalArticle);
+        mTask.setPageIndex(currentPage);
+        mTask.setNewsAmount(totalArticle);
         mModle.doTask(mTask,this);
     }
 
@@ -53,12 +52,12 @@ public class FAQsItemPresenter extends BasePresenter<IListView> implements IList
     public void onPreTask(BaseTask task) {
         switch (mTaskId) {
             //刷新操作
-            case CodeNewsTask.Id.PULL_REFRESH: {
+            case NewsTask.Type.PULL_REFRESH: {
                 mView.setRefreshing(true);
                 break;
             }
             //加载分页
-            case CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
+            case NewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
                 mView.setLoadMOreRefreshing(true);
                 break;
             }
@@ -73,14 +72,14 @@ public class FAQsItemPresenter extends BasePresenter<IListView> implements IList
         mView.cleanViewState();//清除第一次加载的进度条
         switch (mTaskId) {
             //刷新操作
-            case CodeNewsTask.Id.PULL_REFRESH: {
+            case NewsTask.Type.PULL_REFRESH: {
                 currentPage = 1;
                 mView.showErrorMsg(data);//刷新失败
                 mView.setRefreshing(false);
                 break;
             }
             //加载分页
-            case CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
+            case NewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
                 currentPage = currentPage - 1;
                 mView.showErrorMsg(data);//上拉加载失败
                 mView.setLoadMOreRefreshing(false);
@@ -101,7 +100,7 @@ public class FAQsItemPresenter extends BasePresenter<IListView> implements IList
     public void onTaskSuccess(Object result, BaseTask task) {
         switch (mTaskId) {
             //刷新操作
-            case CodeNewsTask.Id.PULL_REFRESH: {
+            case NewsTask.Type.PULL_REFRESH: {
                 ArrayList<FAQs> list = (ArrayList) result;
                 currentPage = 1;
                 FAQs mFaQs = list.get(0);
@@ -117,7 +116,7 @@ public class FAQsItemPresenter extends BasePresenter<IListView> implements IList
                 break;
             }
             //加载分页
-            case CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
+            case NewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
                 mView.showPushLoadMoreData((ArrayList) result);
                 mView.setLoadMOreRefreshing(false);
                 break;
@@ -138,14 +137,14 @@ public class FAQsItemPresenter extends BasePresenter<IListView> implements IList
 
     @Override
     public <T extends BaseTask> void doTask(T task) {
-        mTask = (FAQsItemNewsTask) task;
+        mTask = (NewsTask) task;
         mTaskId = mTask.getTaskId();
         switch (mTaskId) {
-            case FAQsItemNewsTask.Id.PULL_REFRESH: {
+            case NewsTask.Type.PULL_REFRESH: {
                 getPullRefreshData();
                 break;
             }
-            case FAQsItemNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
+            case NewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
                 getLoadMoreData();
                 break;
             }

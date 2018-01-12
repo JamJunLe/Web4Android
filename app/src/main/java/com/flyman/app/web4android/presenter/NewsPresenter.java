@@ -9,8 +9,7 @@ import com.flyman.app.web4android.base.IModelCallback;
 import com.flyman.app.web4android.modle.TopicModule;
 import com.flyman.app.web4android.modle.bean.Topic;
 import com.flyman.app.web4android.modle.task.BaseTask;
-import com.flyman.app.web4android.modle.task.CodeNewsTask;
-import com.flyman.app.web4android.modle.task.TopicNewsTask;
+import com.flyman.app.web4android.modle.task.NewsTask;
 
 import java.util.ArrayList;
 
@@ -21,7 +20,7 @@ public class NewsPresenter extends BasePresenter<IListView> implements IListPres
     private int currentPage = 1;
     private int totalPage = 0;
     private int totalTopics = 0;
-    private CodeNewsTask mTask;
+    private NewsTask mTask;
     public NewsPresenter() {
         mModule = new TopicModule();
         mView = getView();
@@ -29,17 +28,17 @@ public class NewsPresenter extends BasePresenter<IListView> implements IListPres
 
     @Override
     public <E extends BaseTask> void doTask(E task) {
-        mTask = (CodeNewsTask) task;
+        mTask = (NewsTask) task;
         int mTaskId = task.getTaskId();
         switch (mTaskId) {
             //刷新操作
-            case CodeNewsTask.Id.PULL_REFRESH: {
+            case NewsTask.Type.PULL_REFRESH: {
                 mView.setRefreshing(true);
                 getPullRefreshData();
                 break;
             }
             //加载分页
-            case CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
+            case NewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
                 getLoadMoreData();
                 mView.setLoadMOreRefreshing(true);
                 break;
@@ -65,14 +64,14 @@ public class NewsPresenter extends BasePresenter<IListView> implements IListPres
     public void getLoadMoreData() {
         //已经加载完全
         if (totalPage > 0 && currentPage >= totalPage) {
-            mView.showErrorMsg(CodeNewsTask.Message.MSG_PUSH_LOAD_MORE_REFRESH_FINISH);//已经加载了所有的数据
+            mView.showErrorMsg(NewsTask.Message.MSG_PUSH_LOAD_MORE_REFRESH_FINISH);//已经加载了所有的数据
             mView.setRefreshEnable(true);
             mView.setLoadMOreRefreshing(false);
             return;
         }
         currentPage = currentPage + 1;
-        mTask.setPageNum(currentPage);
-        mTask.setTotalCodes(totalTopics);
+        mTask.setPageIndex(currentPage);
+        mTask.setNewsAmount(totalTopics);
         mModule.doTask(mTask,this);
     }
 
@@ -81,12 +80,12 @@ public class NewsPresenter extends BasePresenter<IListView> implements IListPres
         int mTaskId = task.getTaskId();
         switch (mTaskId) {
             //刷新操作
-            case CodeNewsTask.Id.PULL_REFRESH: {
+            case NewsTask.Type.PULL_REFRESH: {
                 mView.setRefreshing(true);
                 break;
             }
             //加载分页
-            case CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
+            case NewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
                 mView.setLoadMOreRefreshing(true);
                 break;
             }
@@ -102,14 +101,14 @@ public class NewsPresenter extends BasePresenter<IListView> implements IListPres
         int mTaskId = task.getTaskId();
         switch (mTaskId) {
             //刷新操作
-            case TopicNewsTask.Id.PULL_REFRESH: {
+            case NewsTask.Type.PULL_REFRESH: {
                 currentPage = 1;
                 mView.showErrorMsg(data);//刷新失败
                 mView.setRefreshing(false);
                 break;
             }
             //加载分页
-            case TopicNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
+            case NewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
                 currentPage = currentPage - 1;
                 mView.showErrorMsg(data);//上拉加载失败
                 mView.setLoadMOreRefreshing(false);
@@ -131,7 +130,7 @@ public class NewsPresenter extends BasePresenter<IListView> implements IListPres
         int mTaskId = task.getTaskId();
         switch (mTaskId) {
             //刷新操作
-            case TopicNewsTask.Id.PULL_REFRESH: {
+            case NewsTask.Type.PULL_REFRESH: {
                 ArrayList<Topic> list = (ArrayList) result;
                 currentPage = 1;
                 Topic mTopic = list.get(1);
@@ -143,7 +142,7 @@ public class NewsPresenter extends BasePresenter<IListView> implements IListPres
                 break;
             }
             //加载分页
-            case CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
+            case NewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
                 mView.showPushLoadMoreData((ArrayList) result);
                 mView.setLoadMOreRefreshing(false);
                 break;

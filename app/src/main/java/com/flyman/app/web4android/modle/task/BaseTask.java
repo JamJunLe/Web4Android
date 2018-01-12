@@ -31,6 +31,5 @@ public class BaseTask implements Serializable {
         String SUCCESS = "SUCCESS";//成功
         String NO_NET = "NO_NET";//无网络
         String NO_REASON = "NO_REASON";//无原因错误
-
     }
 }

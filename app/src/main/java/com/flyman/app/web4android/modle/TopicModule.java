@@ -2,15 +2,14 @@ package com.flyman.app.web4android.modle;
 
 import android.util.Log;
 
+import com.flyman.app.util.log.LogUtils;
 import com.flyman.app.web4android.base.IModelCallback;
 import com.flyman.app.web4android.io.api.NetUrl;
 import com.flyman.app.web4android.io.api.TopicConstant;
 import com.flyman.app.web4android.modle.bean.Topic;
 import com.flyman.app.web4android.modle.bean.TopicTag;
 import com.flyman.app.web4android.modle.task.BaseTask;
-import com.flyman.app.web4android.modle.task.CodeNewsTask;
-import com.flyman.app.web4android.modle.task.HomePageChildNewsTask;
-import com.flyman.app.web4android.modle.task.TopicNewsTask;
+import com.flyman.app.web4android.modle.task.NewsTask;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -22,24 +21,24 @@ import java.util.List;
 
 
 public class TopicModule extends ProviderModel {
-    private CodeNewsTask mCodeTask;
+    private NewsTask mCodeTask;
     private String baseUrl = null;
     private List<Topic> mTopicList = null;
 
     @Override
     public void doTask(BaseTask task, IModelCallback IModelCallback) {
         super.doTask(task, IModelCallback);
-        mCodeTask = (CodeNewsTask) task;
+        mCodeTask = (NewsTask) task;
         int id = mCodeTask.getTaskId();
         switch (id) {
-            case TopicNewsTask.Id.PULL_REFRESH: {
+            case NewsTask.Type.PULL_REFRESH: {
                 baseUrl = TopicConstant.URL;
                 mCodeTask.setUrl(baseUrl);
                 break;
             }
-            case TopicNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
-                int pageNum = mCodeTask.getPageNum();
-                int totalCodes = mCodeTask.getTotalCodes();
+            case NewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
+                int pageNum = mCodeTask.getPageIndex();
+                int totalCodes = mCodeTask.getNewsAmount();
                 baseUrl = baseUrl + MessageFormat.format(TopicConstant.TOPIC_PAGE, new Object[]{totalCodes, pageNum});
                 mCodeTask.setUrl(baseUrl);
                 break;
@@ -97,25 +96,23 @@ public class TopicModule extends ProviderModel {
                         }
                         totalTags.deleteCharAt(totalTags.lastIndexOf("/"));
                     }
-                    Log.e("topicInfo", "href =" + href);
-                    Log.e("topicInfo", "topicId =" + topicId);
-                    Log.e("topicInfo", "memberName =" + memberName);
-                    Log.e("topicInfo", "memberHref =" + memberHref);
-                    Log.e("topicInfo", "memberImg =" + memberImg);
-                    Log.e("topicInfo", "title =" + title);
-                    Log.e("topicInfo", "sub_info =" + sub_info);
-                    Log.e("topicInfo", "eyeOpen =" + eyeOpen);
-                    Log.e("topicInfo", "time =" + time);
-                    Log.e("totalTags", "totalTags =" + totalTags);
-
+                    LogUtils.e("topicInfo", "href =" + href +
+                            " topicId =" + topicId +
+                            " memberName =" + memberName +
+                            " memberHref =" + memberHref +
+                            " title =" + title +
+                            " sub_info =" + sub_info +
+                            " eyeOpen =" + eyeOpen +
+                            " time =" + time +
+                            " totalTags =" + totalTags);
                     Topic mtTopic = new Topic(href, topicId, title, memberHref, memberImg, memberName, eyeOpen, time, totalPage, totalTopics, tagList, totalTags.toString());
                     mTopicList.add(mtTopic);
                 }
-                getTaskCallBack(task).onTaskSuccess(mTopicList,task);
+                getTaskCallBack(task).onTaskSuccess(mTopicList, task);
             }
 
         } catch (Exception e) {
-            getTaskCallBack(task).onTaskFail(HomePageChildNewsTask.Message.MSG_HTMML_PARSE_ERROR,task);
+            getTaskCallBack(task).onTaskFail(NewsTask.Message.MSG_HTMML_PARSE_ERROR, task);
 
         }
     }

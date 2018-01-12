@@ -13,7 +13,7 @@ import com.flyman.app.web4android.base.IListView;
 import com.flyman.app.web4android.io.api.NetUrl;
 import com.flyman.app.web4android.modle.bean.CodeArticle;
 import com.flyman.app.web4android.modle.constant.GlobalConstant;
-import com.flyman.app.web4android.modle.task.CodeNewsTask;
+import com.flyman.app.web4android.modle.task.NewsTask;
 import com.flyman.app.web4android.presenter.CodePresenter;
 import com.flyman.app.web4android.ui.activity.ArticleDetails;
 import com.flyman.app.web4android.widget.LazyListFragment;
@@ -47,7 +47,7 @@ public class CodeListFragment extends LazyListFragment<IListView, CodePresenter>
 //
 //    @Override
 //    public void onStartPresent() {
-//        mCodePresenter.doTask(new CodeNewsTask(CodeNewsTask.Id.PULL_REFRESH));
+//        mCodePresenter.doTask(new CodeNewsTask(CodeNewsTask.Type.PULL_REFRESH));
 //    }
 
     @Override
@@ -103,12 +103,12 @@ public class CodeListFragment extends LazyListFragment<IListView, CodePresenter>
 
     @Override
     public void onRefresh() {
-        mCodePresenter.doTask(new CodeNewsTask(CodeNewsTask.Id.PULL_REFRESH));
+        mCodePresenter.doTask(new NewsTask(NewsTask.Type.PULL_REFRESH));
     }
 
     @Override
     public void onLoadMore() {
-        mCodePresenter.doTask(new CodeNewsTask(CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH));
+        mCodePresenter.doTask(new NewsTask(NewsTask.Type.PUSH_LOAD_MORE_REFRESH));
 
     }
 

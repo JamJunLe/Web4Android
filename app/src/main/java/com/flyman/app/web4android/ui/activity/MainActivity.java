@@ -95,19 +95,19 @@ public class MainActivity extends MVPBaseActivity<IMainView, MainPresenter> impl
     public void OnRgsExtraCheckedChanged(RadioGroup radioGroup, int checkedId, int index) {
         switch (index) {
             case 0: {
-                mToolbar.setTitle(getResources().getString(R.string.main_tab_1));
+                mToolbar.setTitle(getString(R.string.main_tab_1));
                 break;
             }
             case 1: {
-                mToolbar.setTitle(getResources().getString(R.string.main_tab_2));
+                mToolbar.setTitle(getString(R.string.main_tab_2));
                 break;
             }
             case 2: {
-                mToolbar.setTitle(getResources().getString(R.string.main_tab_3));
+                mToolbar.setTitle(getString(R.string.main_tab_3));
                 break;
             }
             case 3: {
-                mToolbar.setTitle(getResources().getString(R.string.main_tab_4));
+                mToolbar.setTitle(getString(R.string.main_tab_4));
                 break;
             }
             default: {
@@ -160,8 +160,8 @@ public class MainActivity extends MVPBaseActivity<IMainView, MainPresenter> impl
             TextView tv_gank_address = (TextView) aboutContainer.findViewById(R.id.tv_gank_address);
             tv_gank_io.setOnClickListener(this);
             tv_gank_address.setOnClickListener(this);
-            tv_gank_io.setText(Html.fromHtml(getResources().getString(R.string.text_about_data_from) + " <font color='#d22222'><a href=" + ">泡在网上的日子</a>"));
-            tv_gank_address.setText(Html.fromHtml(getResources().getString(R.string.text_about_data_from_github) + " <font color='#d22222'><a href=" + ">Web4Android</a>"));
+            tv_gank_io.setText(Html.fromHtml(getString(R.string.text_about_data_from) + " <font color='#d22222'><a href=" + ">泡在网上的日子</a>"));
+            tv_gank_address.setText(Html.fromHtml(getString(R.string.text_about_data_from_github) + " <font color='#d22222'><a href=" + ">Web4Android</a>"));
             String[] titles = getResources().getStringArray(R.array.open_source_framework_title);
             String[] urls = getResources().getStringArray(R.array.open_source_framework_url);
             for (int i = 0; i < titles.length; i++) {

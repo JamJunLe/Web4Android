@@ -9,7 +9,7 @@ import com.flyman.app.web4android.io.api.CodeConstant;
 import com.flyman.app.web4android.io.net.CustomRequest;
 import com.flyman.app.web4android.modle.bean.CodeArticle;
 import com.flyman.app.web4android.modle.task.BaseTask;
-import com.flyman.app.web4android.modle.task.CodeNewsTask;
+import com.flyman.app.web4android.modle.task.NewsTask;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -21,7 +21,7 @@ import java.util.List;
 
 public class CodeModule extends ProviderModel {
     private IModelCallback callBack;
-    private CodeNewsTask mCodeTask;
+    private NewsTask mCodeTask;
     private CustomRequest mCustomRequest;
     private String baseUrl = CodeConstant.URL;
     private int taskId;
@@ -38,13 +38,13 @@ public class CodeModule extends ProviderModel {
 //        mCodeTask = (CodeNewsTask) t;
 //        int id = mCodeTask.getTaskId();
 //        switch (id) {
-//            case CodeNewsTask.Id.PULL_REFRESH: {
+//            case CodeNewsTask.Type.PULL_REFRESH: {
 //                taskId = mCodeTask.getTaskId();
 //                break;
 //            }
-//            case CodeNewsTask.Id.PUSH_LOAD_MORE_REFRESH: {
-//                int pageNum = mCodeTask.getPageNum();
-//                int totalCodes = mCodeTask.getTotalCodes();
+//            case CodeNewsTask.Type.PUSH_LOAD_MORE_REFRESH: {
+//                int pageNum = mCodeTask.getPageIndex();
+//                int totalCodes = mCodeTask.getNewsAmount();
 //                baseUrl = baseUrl + MessageFormat.format(CodeConstant.CODE_PAGE, new Object[]{totalCodes, pageNum});
 //                break;
 //            }
@@ -89,7 +89,7 @@ public class CodeModule extends ProviderModel {
                             int lastIndex = otherInfo.lastIndexOf("看");
                             int indexOfTime = otherInfo.indexOf("-");
                             String eyeOpen = otherInfo.substring(0, lastIndex + 1);
-                            String time = otherInfo.substring(indexOfTime-4);
+                            String time = otherInfo.substring(indexOfTime - 4);
                             Log.e("jsoupParse", "href =" + href);
                             Log.e("jsoupParse", "img2 =" + img);
                             Log.e("jsoupParse", "description =" + description);

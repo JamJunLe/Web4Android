@@ -12,7 +12,7 @@ import com.flyman.app.web4android.base.BasePresenter;
 import com.flyman.app.web4android.base.IListView;
 import com.flyman.app.web4android.modle.bean.Topic;
 import com.flyman.app.web4android.modle.constant.GlobalConstant;
-import com.flyman.app.web4android.modle.task.TopicNewsTask;
+import com.flyman.app.web4android.modle.task.NewsTask;
 import com.flyman.app.web4android.presenter.NewsPresenter;
 import com.flyman.app.web4android.ui.activity.ArticleDetails;
 import com.flyman.app.web4android.widget.LazyListFragment;
@@ -30,8 +30,8 @@ public class TopicListFragment extends LazyListFragment<IListView, NewsPresenter
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBundle = getArguments();
-        args = mBundle.getInt(TAG);
-        mTopicPresenter.doTask(new TopicNewsTask(TopicNewsTask.Id.PULL_REFRESH));
+//        args = mBundle.getInt(TAG);
+        mTopicPresenter.doTask(new NewsTask(NewsTask.Type.PULL_REFRESH));
     }
 
     @Override
@@ -94,12 +94,12 @@ public class TopicListFragment extends LazyListFragment<IListView, NewsPresenter
 
     @Override
     public void onRefresh() {
-        mTopicPresenter.doTask(new TopicNewsTask(TopicNewsTask.Id.PULL_REFRESH));
+        mTopicPresenter.doTask(new NewsTask(NewsTask.Type.PULL_REFRESH));
     }
 
     @Override
     public void onLoadMore() {
-        mTopicPresenter.doTask(new TopicNewsTask(TopicNewsTask.Id.PUSH_LOAD_MORE_REFRESH));
+        mTopicPresenter.doTask(new NewsTask(NewsTask.Type.PUSH_LOAD_MORE_REFRESH));
     }
 
     @Override
